@@ -1,6 +1,6 @@
 import React, { createContext, useState, useContext, ReactNode } from 'react';
 
-type Language = 'en' | 'zh';
+type Language = 'en' | 'zh' | 'es' | 'ar';
 
 interface EraData {
   title: string;
@@ -132,16 +132,142 @@ const translations: Record<Language, Record<string, string>> = {
     theme_ocean: "海洋",
     theme_fire: "火焰",
     theme_space: "宇宙"
+  },
+  es: {
+    scroll_hint: "DESPLÁZATE PARA EXPLORAR",
+    era_mech_title: "La Era Mecánica",
+    era_mech_year: "1800s - 1960s",
+    era_mech_type: "Interruptores Físicos y Tarjetas Perforadas",
+    era_mech_desc: "La interacción era física y laboriosa. Los humanos tenían que hablar el idioma de la máquina a través de engranajes, palancas y agujeros perforados. El cálculo era crudo y tangible.",
+    era_desktop_title: "Línea de Comandos y GUI",
+    era_desktop_year: "1970s - 1990s",
+    era_desktop_type: "Teclado y Ratón",
+    era_desktop_desc: "La capa de abstracción se espesa. Escribimos códigos en terminales brillantes. El ratón nos da una mano virtual. La pantalla se convierte en una metáfora de escritorio.",
+    era_touch_title: "La Era Móvil",
+    era_touch_year: "2007 - 2020",
+    era_touch_type: "Multitáctil y Gestos",
+    era_touch_desc: "Las pantallas se convierten en superficies receptivas. Pellizcamos, hacemos zoom y deslizamos. Internet pasa de nuestros escritorios a nuestros bolsillos. El contenido digital se siente tangible.",
+    era_voice_title: "Voz Generativa",
+    era_voice_year: "2023 - Presente",
+    era_voice_type: "Conversación en Lenguaje Natural",
+    era_voice_desc: "La barrera del código se disuelve. Hablamos con las máquinas como hablamos con los humanos. La IA comprende el contexto, los matices y la intención a través de la voz.",
+    era_vision_title: "Computación Espacial",
+    era_vision_year: "2024 - Futuro",
+    era_vision_type: "Seguimiento Ocular y Gestos",
+    era_vision_desc: "La pantalla desaparece. La información digital se superpone al mundo físico. Tus ojos actúan como el cursor, tus dedos como el clic. El mundo es el lienzo.",
+    era_bci_title: "Simbiosis Bio-Digital",
+    era_bci_year: "2030s",
+    era_bci_type: "Interfaz Neuronal (BCI)",
+    era_bci_desc: "Se elimina la fricción final. Los dispositivos leen señales neuronales directamente. Los wearables se convierten en una segunda piel. La intención se traduce instantáneamente en acción.",
+    era_future_title: "Manifestación",
+    era_future_year: "Más Allá",
+    era_future_type: "Intención Pura",
+    era_future_desc: "La realidad se vuelve fluida. La distinción entre lo físico y lo digital se evapora por completo. Lo que imaginas, simplemente se convierte en realidad.",
+    desktop_typing: "C:> SYSTEM.INIT\n> CARGANDO CONTROLADORES...\n> MOUSE_INPUT: DETECTADO\n> TECLADO: LISTO\n> GUI_MODE: ACTIVO\n> _",
+    vision_obj_1: "Persona",
+    vision_obj_2: "Objeto",
+    vision_obj_3: "Dispositivo",
+    vision_sub: "Analizando...",
+    bci_sub: "Sincronización Neuronal: 100%",
+    theme_forest: "Bosque",
+    theme_ocean: "Océano",
+    theme_fire: "Fuego",
+    theme_space: "Cosmos"
+  },
+  ar: {
+    scroll_hint: "قم بالتمرير للاستكشاف",
+    era_mech_title: "العصر الميكانيكي",
+    era_mech_year: "1800s - 1960s",
+    era_mech_type: "مفاتيح فيزيائية وبطاقات مثقبة",
+    era_mech_desc: "كان التفاعل جسديًا وشاقًا. كان على البشر التحدث بلغة الآلة من خلال التروس والرافعات والثقوب. كانت الحوسبة خامًا وملموسة.",
+    era_desktop_title: "سطر الأوامر وواجهة المستخدم الرسومية",
+    era_desktop_year: "1970s - 1990s",
+    era_desktop_type: "لوحة المفاتيح والفأرة",
+    era_desktop_desc: "تزداد طبقة التجريد. نكتب الرموز في محطات مضيئة. الفأرة تعطينا يدًا افتراضية. تصبح الشاشة استعارة لسطح المكتب.",
+    era_touch_title: "عصر الهاتف المحمول",
+    era_touch_year: "2007 - 2020",
+    era_touch_type: "اللمس المتعدد والإيماءات",
+    era_touch_desc: "تصبح الشاشات أسطحًا سريعة الاستجابة. نقوم بالقرص والتكبير والتمرير. ينتقل الإنترنت من مكاتبنا إلى جيوبنا. المحتوى الرقمي يبدو ملموسًا.",
+    era_voice_title: "الصوت التوليدي",
+    era_voice_year: "2023 - الحاضر",
+    era_voice_type: "محادثة باللغة الطبيعية",
+    era_voice_desc: "يذوب حاجز الكود. نتحدث إلى الآلات كما نتحدث إلى البشر. يفهم الذكاء الاصطناعي السياق والفروق الدقيقة والنية من خلال الصوت.",
+    era_vision_title: "الحوسبة المكانية",
+    era_vision_year: "2024 - المستقبل",
+    era_vision_type: "تتبع العين وإيماءات اليد",
+    era_vision_desc: "تختفي الشاشة. تتراكب المعلومات الرقمية على العالم المادي. تعمل عيناك كمؤشر، وأصابعك كنقرة. العالم هو اللوحة.",
+    era_bci_title: "التعايش الحيوي الرقمي",
+    era_bci_year: "2030s",
+    era_bci_type: "الواجهة العصبية (BCI)",
+    era_bci_desc: "تتم إزالة الاحتكاك النهائي. تقرأ الأجهزة الإشارات العصبية مباشرة. تصبح الأجهزة القابلة للارتداء بشرة ثانية. تُترجم النية على الفور إلى عمل.",
+    era_future_title: "التجلي",
+    era_future_year: "ما وراء ذلك",
+    era_future_type: "نية خالصة",
+    era_future_desc: "يصبح الواقع سائلًا. يتبخر التمييز بين المادي والرقمي تمامًا. ما تتخيله، يصبح ببساطة.",
+    desktop_typing: "C:> SYSTEM.INIT\n> جاري تحميل برامج التشغيل...\n> MOUSE_INPUT: تم الكشف\n> لوحة المفاتيح: جاهزة\n> GUI_MODE: نشط\n> _",
+    vision_obj_1: "شخص",
+    vision_obj_2: "كائن",
+    vision_obj_3: "جهاز",
+    vision_sub: "جاري التحليل...",
+    bci_sub: "المزامنة العصبية: 100%",
+    theme_forest: "غابة",
+    theme_ocean: "محيط",
+    theme_fire: "نار",
+    theme_space: "كون"
   }
 };
 
 const LanguageContext = createContext<LanguageContextType | undefined>(undefined);
 
+const getInitialLanguage = (): Language => {
+  const savedLanguage = localStorage.getItem('preferredLanguage') as Language;
+  if (savedLanguage && ['en', 'zh', 'es', 'ar'].includes(savedLanguage)) {
+    return savedLanguage;
+  }
+
+  // 1. Try browser language first
+  const browserLang = navigator.language.toLowerCase();
+  if (browserLang.startsWith('zh')) return 'zh';
+  if (browserLang.startsWith('es')) return 'es';
+  if (browserLang.startsWith('ar')) return 'ar';
+  if (browserLang.startsWith('en')) return 'en';
+
+  // 2. Fallback to timezone-based detection
+  try {
+    const timeZone = Intl.DateTimeFormat().resolvedOptions().timeZone;
+    if (timeZone) {
+      if (timeZone.startsWith('Asia/Shanghai') || timeZone.startsWith('Asia/Taipei') || timeZone.startsWith('Asia/Hong_Kong') || timeZone.startsWith('Asia/Macau')) {
+        return 'zh';
+      }
+      if (timeZone.startsWith('Europe/Madrid') || timeZone.startsWith('America/Mexico_City') || timeZone.startsWith('America/Buenos_Aires') || timeZone.startsWith('America/Bogota') || timeZone.startsWith('America/Lima') || timeZone.startsWith('America/Santiago')) {
+        return 'es';
+      }
+      if (timeZone.startsWith('Asia/Riyadh') || timeZone.startsWith('Asia/Dubai') || timeZone.startsWith('Africa/Cairo') || timeZone.startsWith('Africa/Casablanca') || timeZone.startsWith('Asia/Baghdad')) {
+        return 'ar';
+      }
+    }
+  } catch (e) {
+    // Ignore timezone errors
+  }
+
+  // Default to English if no match
+  return 'en';
+};
+
 export const LanguageProvider: React.FC<{ children: ReactNode }> = ({ children }) => {
-  const [language, setLanguage] = useState<Language>('zh');
+  const [language, setLanguage] = useState<Language>(getInitialLanguage);
 
   const toggleLanguage = () => {
-    setLanguage(prev => prev === 'en' ? 'zh' : 'en');
+    setLanguage(prev => {
+      let nextLang: Language = 'en';
+      if (prev === 'zh') nextLang = 'en';
+      else if (prev === 'en') nextLang = 'es';
+      else if (prev === 'es') nextLang = 'ar';
+      else if (prev === 'ar') nextLang = 'zh';
+      
+      localStorage.setItem('preferredLanguage', nextLang);
+      return nextLang;
+    });
   };
 
   const t = (key: string) => {

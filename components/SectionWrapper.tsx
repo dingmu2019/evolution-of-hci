@@ -59,7 +59,7 @@ const SectionWrapper: React.FC<SectionWrapperProps> = ({ children, eraPrefix, in
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8, delay: 0.5 }}
-                className="bg-black/50 backdrop-blur-xl border-l-2 border-white/20 p-6 md:p-8 rounded-r-xl max-w-md shadow-2xl"
+                className="bg-black/50 backdrop-blur-xl border-l-2 rtl:border-l-0 rtl:border-r-2 border-white/20 p-6 md:p-8 rounded-r-xl rtl:rounded-r-none rtl:rounded-l-xl max-w-md shadow-2xl"
              >
                 <p className="text-gray-200 text-sm md:text-base leading-relaxed">
                     {data.desc}
@@ -70,7 +70,7 @@ const SectionWrapper: React.FC<SectionWrapperProps> = ({ children, eraPrefix, in
       </div>
 
       {/* 3. Timeline Indicator (Right Side) */}
-      <div className="absolute right-6 top-1/2 -translate-y-1/2 hidden md:flex flex-col gap-4 z-20">
+      <div className="absolute right-6 rtl:right-auto rtl:left-6 top-1/2 -translate-y-1/2 hidden md:flex flex-col gap-4 z-20">
           {[0, 1, 2, 3, 4, 5, 6].map((i) => (
               <div 
                 key={i} 

@@ -20,7 +20,7 @@ const SectionBCI: React.FC = () => {
       <div className="absolute inset-0 bg-[linear-gradient(rgba(0,100,255,0.03)_1px,transparent_1px),linear-gradient(90deg,rgba(0,100,255,0.03)_1px,transparent_1px)] bg-[size:40px_40px]"></div>
       
       {/* Main Visual Positioned to Right */}
-      <div className="absolute right-0 md:right-[10%] top-1/2 -translate-y-1/2 opacity-60 md:opacity-80 scale-75 md:scale-100">
+      <div className="absolute right-0 md:right-[10%] rtl:right-auto rtl:left-0 md:rtl:left-[10%] top-1/2 -translate-y-1/2 opacity-60 md:opacity-80 scale-75 md:scale-100">
         <div className="relative w-[300px] h-[500px]">
             
             {/* The Biological Human Silhouette (Base) */}

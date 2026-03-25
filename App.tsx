@@ -11,23 +11,33 @@ import { LanguageProvider, useLanguage } from './LanguageContext';
 
 const LanguageSwitcher = () => {
   const { language, toggleLanguage } = useLanguage();
+  
+  const getNextLanguageLabel = () => {
+    if (language === 'zh') return 'EN / English';
+    if (language === 'en') return 'ES / Español';
+    if (language === 'es') return 'AR / العربية';
+    return 'CN / 中文';
+  };
+
   return (
     <button
       onClick={toggleLanguage}
-      className="fixed top-6 right-6 z-50 px-4 py-2 rounded-full backdrop-blur-md bg-white/10 border border-white/20 text-white font-mono hover:bg-white/20 transition-all cursor-pointer shadow-lg hover:scale-105 active:scale-95"
+      className={`fixed top-6 ${language === 'ar' ? 'left-6' : 'right-6'} z-50 px-4 py-2 rounded-full backdrop-blur-md bg-white/10 border border-white/20 text-white font-mono hover:bg-white/20 transition-all cursor-pointer shadow-lg hover:scale-105 active:scale-95`}
     >
-      {language === 'en' ? 'CN / 英文' : 'EN / 中文'}
+      {getNextLanguageLabel()}
     </button>
   );
 };
 
 const AppContent: React.FC = () => {
+  const { language } = useLanguage();
+
   return (
-    <main className="w-full bg-black relative">
+    <main className="w-full bg-black relative" dir={language === 'ar' ? 'rtl' : 'ltr'}>
       <LanguageSwitcher />
       
       {/* Scroll Progress Line (Visual Only) */}
-      <div className="fixed left-6 md:left-12 top-0 bottom-0 w-px bg-gradient-to-b from-transparent via-white/20 to-transparent z-40 hidden md:block pointer-events-none" />
+      <div className={`fixed ${language === 'ar' ? 'right-6 md:right-12' : 'left-6 md:left-12'} top-0 bottom-0 w-px bg-gradient-to-b from-transparent via-white/20 to-transparent z-40 hidden md:block pointer-events-none`} />
 
       <SectionWrapper eraPrefix="era_mech" index={0}>
         <SectionMechanical />
@@ -57,6 +67,11 @@ const AppContent: React.FC = () => {
         <SectionFuture />
       </SectionWrapper>
       
+      <footer className="w-full py-6 text-center text-white/40 text-sm bg-black relative z-50">
+        <a href="https://beian.miit.gov.cn/" target="_blank" rel="noopener noreferrer" className="hover:text-white/80 transition-colors">
+          津ICP备2025041707号-1
+        </a>
+      </footer>
     </main>
   );
 };

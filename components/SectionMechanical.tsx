@@ -50,7 +50,7 @@ const SectionMechanical: React.FC = () => {
 
       {/* Decorative smaller gears */}
       <motion.div
-        className="absolute bottom-[-100px] left-[-100px] text-neutral-600 opacity-20"
+        className="absolute bottom-[-100px] left-[-100px] rtl:left-auto rtl:right-[-100px] text-neutral-600 opacity-20"
         animate={{ rotate: -360 }}
         transition={{ repeat: Infinity, duration: 20, ease: "linear" }}
       >

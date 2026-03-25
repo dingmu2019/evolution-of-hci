@@ -14,9 +14,9 @@ const SectionTouch: React.FC = () => {
     <div className="w-full h-full bg-gray-50 overflow-hidden relative flex items-center justify-center">
       
       {/* Dynamic colorful blobs in background for that iOS blurry feel */}
-      <div className="absolute top-[-10%] left-[-10%] w-[60vw] h-[60vw] bg-blue-300 rounded-full mix-blend-multiply filter blur-[100px] opacity-70 animate-blob"></div>
-      <div className="absolute top-[20%] right-[-10%] w-[50vw] h-[50vw] bg-purple-300 rounded-full mix-blend-multiply filter blur-[100px] opacity-70 animate-blob animation-delay-2000"></div>
-      <div className="absolute bottom-[-20%] left-[20%] w-[50vw] h-[50vw] bg-pink-300 rounded-full mix-blend-multiply filter blur-[100px] opacity-70 animate-blob animation-delay-4000"></div>
+      <div className="absolute top-[-10%] left-[-10%] rtl:left-auto rtl:right-[-10%] w-[60vw] h-[60vw] bg-blue-300 rounded-full mix-blend-multiply filter blur-[100px] opacity-70 animate-blob"></div>
+      <div className="absolute top-[20%] right-[-10%] rtl:right-auto rtl:left-[-10%] w-[50vw] h-[50vw] bg-purple-300 rounded-full mix-blend-multiply filter blur-[100px] opacity-70 animate-blob animation-delay-2000"></div>
+      <div className="absolute bottom-[-20%] left-[20%] rtl:left-auto rtl:right-[20%] w-[50vw] h-[50vw] bg-pink-300 rounded-full mix-blend-multiply filter blur-[100px] opacity-70 animate-blob animation-delay-4000"></div>
 
       <div className="relative w-full h-full flex items-center justify-center opacity-60">
         {touchPoints.map((point) => (

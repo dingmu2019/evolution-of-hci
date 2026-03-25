@@ -6,10 +6,10 @@ const SectionVoice: React.FC = () => {
     <div className="w-full h-full bg-[#0a0a0a] flex items-center justify-center relative overflow-hidden">
       
       {/* Background Glow */}
-      <div className="absolute top-1/2 left-3/4 w-[50vw] h-[50vw] bg-white/5 rounded-full blur-[120px] pointer-events-none transform -translate-x-1/2 -translate-y-1/2" />
+      <div className="absolute top-1/2 left-3/4 rtl:left-auto rtl:right-3/4 w-[50vw] h-[50vw] bg-white/5 rounded-full blur-[120px] pointer-events-none transform -translate-x-1/2 rtl:translate-x-1/2 -translate-y-1/2" />
 
       {/* Morphing Voice Orb - Positioned slightly to the right to balance text on left */}
-      <div className="relative flex items-center justify-center transform md:translate-x-[20vw]">
+      <div className="relative flex items-center justify-center transform md:translate-x-[20vw] md:rtl:-translate-x-[20vw]">
         {/* Core */}
         <motion.div
           className="w-48 h-48 md:w-64 md:h-64 bg-white rounded-full mix-blend-screen shadow-[0_0_80px_rgba(255,255,255,0.4)]"

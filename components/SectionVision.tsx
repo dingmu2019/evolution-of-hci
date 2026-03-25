@@ -41,7 +41,7 @@ const SectionVision: React.FC = () => {
       {/* HUD Elements */}
       <div className="absolute inset-0 z-10 pointer-events-none">
           {/* Moving Objects */}
-          <div className="absolute inset-0 overflow-hidden transform md:scale-100 scale-75 origin-top-left">
+          <div className="absolute inset-0 overflow-hidden transform md:scale-100 scale-75 origin-top-left rtl:origin-top-right">
              <BoundingBox text="ID: HUMAN_01" initialX="60%" initialY="30%" delay={0} />
              <BoundingBox text="ID: DEVICE_MOB" initialX="75%" initialY="60%" delay={2} />
              <BoundingBox text="ID: STRUC_WALL" initialX="20%" initialY="40%" delay={1} />
