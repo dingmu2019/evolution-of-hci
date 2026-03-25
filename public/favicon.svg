@@ -1,0 +1,88 @@
+
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 320" width="320" height="320">
+  <defs>
+    <linearGradient id="dm-bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#040b14" />
+      <stop offset="100%" stop-color="#0b1b36" />
+    </linearGradient>
+    <linearGradient id="dm-glow" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#00f2fe" />
+      <stop offset="100%" stop-color="#4facfe" />
+    </linearGradient>
+    <linearGradient id="dm-accent" x1="0%" y1="100%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#2a0845" />
+      <stop offset="100%" stop-color="#6441a5" />
+    </linearGradient>
+    <filter id="neon">
+      <feGaussianBlur stdDeviation="4" result="coloredBlur"/>
+      <feMerge>
+        <feMergeNode in="coloredBlur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+
+  <!-- Deep Space / Neural Background -->
+  <rect width="320" height="320" fill="url(#dm-bg)" rx="64" />
+
+  <!-- Abstract Neural Network Background (Synaptic Noise) -->
+  <g stroke="#1e3a8a" stroke-width="1.5" opacity="0.4">
+    <line x1="40" y1="40" x2="120" y2="90" />
+    <line x1="280" y1="60" x2="200" y2="90" />
+    <line x1="60" y1="280" x2="90" y2="250" />
+    <line x1="260" y1="270" x2="230" y2="250" />
+    <line x1="40" y1="150" x2="80" y2="150" />
+    <line x1="280" y1="150" x2="240" y2="150" />
+    <line x1="160" y1="40" x2="160" y2="90" />
+    <line x1="160" y1="280" x2="230" y2="250" />
+    <line x1="160" y1="280" x2="90" y2="250" />
+  </g>
+
+  <!-- AlphaFold / Protein folding abstract accent -->
+  <path d="M 40 160 C 60 100, 100 60, 160 40" fill="none" stroke="url(#dm-accent)" stroke-width="4" opacity="0.5" stroke-dasharray="8 6" />
+  <path d="M 280 160 C 260 220, 220 260, 160 280" fill="none" stroke="url(#dm-accent)" stroke-width="4" opacity="0.5" stroke-dasharray="8 6" />
+
+  <!-- The "元" as a Neural Graph -->
+  <g filter="url(#neon)">
+    <!-- Connections (Synapses) -->
+    <g stroke="url(#dm-glow)" stroke-width="6" stroke-linecap="round" stroke-linejoin="round">
+      <!-- Top Bar -->
+      <line x1="120" y1="90" x2="160" y2="90" />
+      <line x1="160" y1="90" x2="200" y2="90" />
+      
+      <!-- Vertical Connectors (Hidden logic paths) -->
+      <line x1="160" y1="90" x2="160" y2="150" />
+      
+      <!-- Bottom Bar -->
+      <line x1="80" y1="150" x2="160" y2="150" />
+      <line x1="160" y1="150" x2="240" y2="150" />
+      
+      <!-- Left Leg -->
+      <path d="M 140 150 Q 120 200 90 250" fill="none" />
+      
+      <!-- Right Leg -->
+      <path d="M 180 150 Q 200 200 230 250" fill="none" />
+      
+      <!-- Cross connections for a "network" feel -->
+      <line x1="120" y1="90" x2="140" y2="150" stroke-width="2" opacity="0.7" />
+      <line x1="200" y1="90" x2="180" y2="150" stroke-width="2" opacity="0.7" />
+      <line x1="140" y1="150" x2="180" y2="150" stroke-width="2" opacity="0.7" />
+    </g>
+
+    <!-- Nodes (Neurons) -->
+    <g fill="#ffffff">
+      <circle cx="120" cy="90" r="6" />
+      <circle cx="160" cy="90" r="9" fill="#ffffff" />
+      <circle cx="200" cy="90" r="6" />
+      
+      <circle cx="80" cy="150" r="6" />
+      <circle cx="140" cy="150" r="6" />
+      <circle cx="160" cy="150" r="9" fill="#ffffff" />
+      <circle cx="180" cy="150" r="6" />
+      <circle cx="240" cy="150" r="6" />
+      
+      <circle cx="90" cy="250" r="7" />
+      <circle cx="230" cy="250" r="7" />
+    </g>
+  </g>
+</svg>

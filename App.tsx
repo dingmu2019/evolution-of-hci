@@ -67,7 +67,8 @@ const AppContent: React.FC = () => {
         <SectionFuture />
       </SectionWrapper>
       
-      <footer className="w-full py-6 text-center text-white/40 text-sm bg-black relative z-50">
+      <footer className="w-full py-8 text-center text-white/40 text-sm bg-black relative z-50 flex flex-col items-center justify-center gap-2">
+        <p>© {new Date().getFullYear()} Tianjin Yuanchuang Huaying Technology Co., Ltd. All Rights Reserved.</p>
         <a href="https://beian.miit.gov.cn/" target="_blank" rel="noopener noreferrer" className="hover:text-white/80 transition-colors">
           津ICP备2025041707号-1
         </a>
